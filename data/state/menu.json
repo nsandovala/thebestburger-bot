@@ -1,0 +1,28 @@
+{
+  "combos": [
+    {
+      "id": 1,
+      "name": "Combo Mechada Clásica",
+      "items": ["Mechada", "Papas", "Bebida"],
+      "price": 7600
+    },
+    {
+      "id": 2,
+      "name": "Combo Cheese Burger",
+      "items": ["Cheese Burger", "Papas", "Bebida"],
+      "price": 6950
+    },
+    {
+      "id": 3,
+      "name": "Dúo Cheddaron",
+      "items": ["2 Mechada Cheddaron", "Papas"],
+      "price": 11500
+    },
+    {
+      "id": 4,
+      "name": "Dúo Mechada Z",
+      "items": ["2 Mechada Z"],
+      "price": 11000
+    }
+  ]
+}

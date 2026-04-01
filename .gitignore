@@ -1,0 +1,16 @@
+# Node
+node_modules/
+
+# WhatsApp session
+session/
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Base de datos local
+*.db
+
+# Logs
+*.log
+
+# OS
+.DS_Store
