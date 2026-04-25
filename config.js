@@ -5,7 +5,7 @@ module.exports = {
     
     // Telegram para notificaciones
     telegramToken: "", // Pegá tu token completo acá
-    telegramChatId: "Id: 6125044592", // Pegá el ID que acabás de obtener (solo números)
+    telegramChatId: "Id:", // Pegá el ID que acabás de obtener (solo números)
     
     modoProduccion: true, // Mantener en false hasta que todo esté testeado
     whitelistDev: ['@c.us', '40862755086377@lid'], // Tu WhatsApp para pruebas
