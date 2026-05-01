@@ -4,7 +4,9 @@ const { exec } = require('child_process');
 const brain = require('./brain');
 const config = require('./config');
 
-console.log(`🚀 Iniciando ${config.nombreNegocio} - Tío Burger Bot v1.3`);
+console.log(`🚀 Iniciando ${config.nombreNegocio} - Tío Burger Bot v2.2`);
+
+const botStartTime = Date.now();
 
 function escapeAppleScript(str = '') {
     return String(str).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
@@ -52,6 +54,13 @@ client.on('message', async (msg) => {
         if (msg.from === 'status@broadcast') return; // estados
         if (msg.from.endsWith('@broadcast')) return; // broadcasts varios
         if (msg.type !== 'chat') return; // ignora audios, imágenes, etc por ahora
+
+        // Bloquear mensajes antiguos al iniciar
+        const msgTime = (msg.timestamp || 0) * 1000;
+        if (msgTime > 0 && msgTime < botStartTime) {
+            console.log(`⏱️ Mensaje antiguo ignorado: ${msg.from}`);
+            return;
+        }
 
         console.log(`📩 ${msg.from}: ${msg.body}`);
 
@@ -138,3 +147,7 @@ process.on('SIGINT', async () => {
 });
 
 client.initialize();
+
+// Iniciar sync automático a Firebase
+const startSyncScheduler = require('./bridge/sync-scheduler');
+startSyncScheduler(5 * 60 * 1000); // Cada 5 minutos
